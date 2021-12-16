@@ -11,6 +11,7 @@ the specified functionality.
 Note: to convert a string s to an int value, use the int.Parse(s) method.
 */
 
+
 namespace HomeWork1
 {
     public class Program
