@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1_Ternary", "Homework1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task2_ISBN", "Homework1\Task2_ISBN\Task2_ISBN.csproj", "{EFAA5487-9376-4AC1-9987-EA7CBA09BBBD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3_SumFromMaxToMin", "Homework1\Task3\SumFromMinToMax\Task3_SumFromMaxToMin.csproj", "{74A07ACB-DE65-44D1-8C17-CB81192CC200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3_SumFromMaxToMin", "Homework1\Task3_SumFromMinToMax\Task3_SumFromMaxToMin.csproj", "{74A07ACB-DE65-44D1-8C17-CB81192CC200}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
