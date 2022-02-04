@@ -7,7 +7,7 @@ a console application that implements the specified functionality.
 Example: array[1, 3, 5, 1, 0, 3, 0, 1].The sum of the required elements = 5 + 1 + 0 = 6.
 Note 1: the correctness of the length of the array can be left unchecked.
 
-Note 2: The smallest and largest items are to be included in the amount.*/
+Note 2: The smallest and largest items are to be included in the amount. { 8, 8, 1, 8, 1, 6 } */
 
 using System;
 using System.Collections.Generic;
@@ -19,55 +19,47 @@ namespace Homework_Task3
     {
         public static void Main(string[] args)
         {
-            int[] array = { 8, 8, 0, 8, 5, 6 };
+            int[] array = { 8, 8, 0, 1, 5, 6 }; 
             SumFromMaxToMinFinder(array);
+
+            Console.ReadKey();
         }
 
         static void SumFromMaxToMinFinder(int[] array)
         {
             var arrayAsList = array.ToList();
 
-            //Finding max value and max index
-            int maxValue = array.Max();
-            int maxIndex = arrayAsList.IndexOf(maxValue);
-
             //Finding min value and min index
             int minValue = array.Min();
             int minIndex = arrayAsList.IndexOf(minValue);
 
-            var count = 0;
-            //method which helps to find how much elements I need to go throw from minIndex to maxIndex or opposite. Adding +1 for having correct counting
-            if (minIndex > maxIndex)
-            {
-                count = minIndex - maxIndex + 1;
-            }
-            else
-            {
-                count = maxIndex - minIndex + 1;
-            }
+            //Finding max value and max index
+            int maxValue = array.Max();
+            //Using LastIndexOf to find last index of max value
+            int maxIndex = arrayAsList.LastIndexOf(maxValue);
 
-            var startIndex = 0;
-            //method for finding out from which side program should count the range for Sum
-            if (minIndex > maxIndex)
-            {
-                startIndex = maxIndex;
-            }
-            else
-            {
-                startIndex = minIndex;
-            }
+            var sum = 0;
 
-            //Getting range from minValue to maxValue
-            var range = arrayAsList.GetRange(startIndex, count);
-            //Getting sum from range
-            var Sum = range.Sum();
+            for (int i = 0; i < arrayAsList.Count; i++)
+            {   
+                //If first we have max number and after we have min number this if will work
+                if (i <= minIndex && i >= maxIndex)
+                {
+                    sum+= arrayAsList[i];
+                }
+                //Otherwise if we have first min number and later max number this if will work
+                else if (i >= minIndex && i <= maxIndex)
+                {
+                    sum += arrayAsList[i];
+                }
+            }
 
             //Find method how to writeline array to console without using for cicle
             //https://stackoverflow.com/questions/16265247/printing-all-contents-of-array-in-c-sharp
             Console.WriteLine(string.Join(", ",array));
-            Console.WriteLine("\nMaxValue is {0} and max Index is {1}", maxValue, maxIndex);
-            Console.WriteLine("MinValue is {0} and min Index is {1}",minValue, minIndex);
-            Console.WriteLine("\nSum of max and min is {0} it needs to run throw {1} elements to find sum of min and max", Sum, count);
+            Console.WriteLine("\nMinValue is {0} and min Index is {1}", minValue, minIndex);
+            Console.WriteLine("MaxValue is {0} and max Index is {1}", maxValue, maxIndex);
+            Console.WriteLine("\nSum between min and max is {0}", sum);
             
         }
 

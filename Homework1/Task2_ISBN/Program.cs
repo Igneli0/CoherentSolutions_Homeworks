@@ -35,16 +35,16 @@ namespace Homework_Task2
         static int sumOfNineDigits(string nineDigits)
         {
             int multiplier = 10;
-            int Sum = 0;
+            int sum = 0;
 
             for (int i = 0; i < 9; i++)
             {
                 //bellow loop is: ((10*d1)+(9*d2)+(8*d3)+(7*d4)+(6*d5)+(5*d6)+(4*d7)+(3*d8)+(2*d9))
                 //Solution which I found how to convert char to int https://stackoverflow.com/questions/239103/convert-char-to-int-in-c-sharp
-                Sum += (nineDigits[i] - '0') * (multiplier - i);
+                sum += (nineDigits[i] - '0') * (multiplier - i);
             }
 
-            return Sum;
+            return sum;
         }
 
         //Method for checking if Sum of nine digits is multiple of 11 or not and giving the last character for ISBN
