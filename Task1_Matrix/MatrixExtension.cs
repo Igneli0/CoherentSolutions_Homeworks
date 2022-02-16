@@ -8,6 +8,8 @@ namespace Matrix
 {
     internal static class MatrixExtension
     {
+
+        //Method for creating one matrix out of two
        public static DiagonalMatrix creatingExtensionOfTwoDiagonalMatrix(this DiagonalMatrix first, DiagonalMatrix second)
         {
             var newMatrixLength = 0;
@@ -28,8 +30,6 @@ namespace Matrix
                 array[i] = first[i, i] + second[i, i];
             }
             return new DiagonalMatrix(array);
-
-
         }
         
     }

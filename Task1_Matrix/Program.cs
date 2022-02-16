@@ -30,32 +30,31 @@ namespace Matrix
     {
         static void Main(string[] args)
         {
-            var matrixArray1 = new int[] { 3, 3, 2 };
-            var matrixArray2 = new int[] { 7, 4, 1 };
+            var matrixArray1 = new int[] { 2, 2, 4 };
+            var matrixArray2 = new int[] { 1, 4, 1 };
 
-
+            // 1 array
             Console.WriteLine("First matrix array numbers is:");
             foreach (var matrix in matrixArray1)
             {
                 Console.Write(matrix + ", ");
             }
-
+            // 2 array
             Console.WriteLine("\n\nSecond matrix array numbers is:");
             foreach (var matrix in matrixArray2)
             {
                 Console.Write(matrix +", ");
             }
-
-            Console.WriteLine("\nFirst matrix");
+            // 1 Matrix
+            Console.Write("\n\nFirst matrix");
             var matrix1 = new DiagonalMatrix(matrixArray1);
             Console.WriteLine(matrix1.ToString());
-
-            Console.WriteLine("\nSecond matrix");
-            var matrix2 = new DiagonalMatrix(matrixArray1);
+            // 2 Matrix
+            Console.Write("\nSecond matrix");
+            var matrix2 = new DiagonalMatrix(matrixArray2);
             Console.WriteLine(matrix2.ToString());
-
-
-            Console.WriteLine("Extended matrix");
+            // Extended Matrix
+            Console.Write("\nExtended matrix");
             var extendedMatrix = MatrixExtension.creatingExtensionOfTwoDiagonalMatrix(matrix1, matrix2).ToString();
             Console.WriteLine(extendedMatrix);
 

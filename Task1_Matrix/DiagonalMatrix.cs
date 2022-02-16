@@ -9,26 +9,29 @@ namespace Matrix
     internal class DiagonalMatrix
     {
         private int[] _diagonalMatrixArray;
-        public int Size => _size;
-        readonly int _size;
+        public int Size { get; }
 
         public int this[int i, int j]
         {
             get
             {
-                if (i < 0 && j < 0 || i >= _size && j >= _size || i != j)
+                if (i < 0 && j < 0 || i >= Size && j >= Size)
                 {
-                    return 0;
+                    throw new IndexOutOfRangeException();
                 }
                 else if (i == j)
                 {
                     return _diagonalMatrixArray[i];
                 }
+                else if(i != j)
+                {
+                    return 0;
+                }
                 else return 0;
             }
             set
             {
-                if (i >= 0 && j >= 0 || i <= _size && j <= _size || i == j)
+                if (i >= 0 && j >= 0 || i == j || i <= Size && j <= Size)
                 {
                     _diagonalMatrixArray[i] = value;
                 }
@@ -36,46 +39,63 @@ namespace Matrix
             }
         }
         //Params using https://www.youtube.com/watch?v=k23u6-px6Bs&ab_channel=AvetisGProgramming
+        //Creating matrix
         public DiagonalMatrix(params int[] DiagonalMatrixArray)
         {
             if (DiagonalMatrixArray == null)
             {
-                _size = 0;
+                Size = 0;
             }
             else
             {
-                _size = DiagonalMatrixArray.Length;
-                _diagonalMatrixArray = new int[_size];
-                Array.Copy(DiagonalMatrixArray, _diagonalMatrixArray, _size);
+                Size = DiagonalMatrixArray.Length;
+                _diagonalMatrixArray = new int[Size];
+                Array.Copy(DiagonalMatrixArray, _diagonalMatrixArray, Size);
             }
         }
-
-        
-
-
-        public override string ToString()
+        //Printing matrix
+        public string PrintMatrixElements()
         {
-            var sb = new StringBuilder();
+            var builder = new StringBuilder();
+
             if (Size == 0)
             {
-                return string.Empty;
+                throw new IndexOutOfRangeException();
             }
-            //a loop for creating a matrix, iterating through rows and columns:
-            for (int row = 0; row < _size; row++)
+
+            for (int row = 0; row < Size; row++)
             {
-                sb.AppendLine();
-                for (int column = 0; column < _size; column++)
+                builder.AppendLine();
+                for (int column = 0; column < Size; column++)
                 {
-                    sb.Append(this[row, column]);
+                    builder.Append(this[row, column]);
                 }
             }
-            return sb.ToString();
+            return builder.ToString();
         }
 
-        public int Track()
+        public override bool Equals(object obj)
         {
-            return _diagonalMatrixArray.Sum();
+            var testMatrix = obj as DiagonalMatrix;
+
+            if (testMatrix == null || GetType() != obj.GetType() || Size != testMatrix.Size)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < _diagonalMatrixArray.Length; i++)
+            {
+                if (_diagonalMatrixArray[i] != testMatrix._diagonalMatrixArray[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
+        public override string ToString() { return PrintMatrixElements(); }
+
+        public int Track() { return _diagonalMatrixArray.Sum(); }
 
     }
 }
