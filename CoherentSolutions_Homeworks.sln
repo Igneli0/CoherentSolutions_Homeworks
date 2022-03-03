@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1_Ternary", "Homework1\Task1_Ternary.csproj", "{A03EF86F-0300-43DB-9911-710EFBE7C4E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1_Ternary", "Homework1\Task1_Ternary.csproj", "{A03EF86F-0300-43DB-9911-710EFBE7C4E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1_GenericDiagonalMatrix", "Task1_GenericDiagonalMatrix\Task1_GenericDiagonalMatrix.csproj", "{FDFAAD19-DA71-417F-A4B3-C6E53D5E7FF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A03EF86F-0300-43DB-9911-710EFBE7C4E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A03EF86F-0300-43DB-9911-710EFBE7C4E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A03EF86F-0300-43DB-9911-710EFBE7C4E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFAAD19-DA71-417F-A4B3-C6E53D5E7FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFAAD19-DA71-417F-A4B3-C6E53D5E7FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFAAD19-DA71-417F-A4B3-C6E53D5E7FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFAAD19-DA71-417F-A4B3-C6E53D5E7FF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
